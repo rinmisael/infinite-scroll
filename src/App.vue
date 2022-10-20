@@ -2,11 +2,11 @@
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
 // import HelloWorld from './components/HelloWorld.vue'
-import { useMaintore } from './stores/mainStore'
+import { useMainStore } from './stores/mainStore'
 
 import Scroll from './components/Scroll.vue'
 
-const mainStore = useMaintore()
+const mainStore = useMainStore()
 
 
 </script>

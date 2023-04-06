@@ -17,8 +17,9 @@
 
 <style scoped>
 .post {
-    background: rgb(88, 67, 67);
-    padding: 1.5em;
+    border: 1px dotted greenyellow;
+    margin-bottom: 0.5em;
+    padding: 1em;
 }
 
 .post:not(:last-child) {
@@ -27,13 +28,12 @@
 
 .post h2 {
     font-size: 1.3em;
-    padding-bottom: 0.25rem;
 }
 
 .post p {
-    color: #888;
+    color: #40c821;
 }
 img{
-    width: 50%;
+    width: 90%;
 }
 </style>

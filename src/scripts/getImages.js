@@ -8,7 +8,7 @@ const getPosts = (number) => {
       title: 'Title',
       urlImage: names[i % names.length],
       content:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing ...',
     })
   }
   return ret

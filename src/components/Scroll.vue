@@ -7,15 +7,14 @@ import getimages from '../scripts/getImages.js'
 const images = ref(getimages(10))
 const scrollComponent = ref(null)
 
-console.log('Hi M!')
 const props = defineProps({
   msg: String
 })
 
-const titleScroll = ref('This will be a infinity scroll, iojojojo')
+const titleScroll = ref('Infinity scroll')
 
 const loadMoreImages = () => {
-  let newImages = getimages(10)
+  let newImages = getimages(30)
   console.log(newImages)
   images.value.push(...newImages)
  }
@@ -37,8 +36,8 @@ const loadMoreImages = () => {
 </script>
 <template>
   <div class="scroll-container" ref="scrollComponent">
-    <p>{{ titleScroll }}</p>
-    <h3>msg: {{ props.msg }}</h3>
+    <!-- <p>{{ titleScroll }}</p> -->
+    <!-- <h3>msg: {{ props.msg }}</h3> -->
     <Item  v-for="post in images" :post="post" :url-image="post.urlImage" :title="post.title" :content="post.content"  ></Item>
     <!-- <ListComponent></ListComponent> -->
   </div>
@@ -46,9 +45,23 @@ const loadMoreImages = () => {
 
 <style scoped>
 .scroll-container {
-  border: 2px dotted rgb(255, 57, 47);
-  background-color: cadetblue;
-  display: flex;
-  flex-direction: column;
+  columns: 5 320px;
+  column-gap: 0.5em;
+}
+
+/* Cambia a dos columnas en pantallas más pequeñas */
+@media (max-width: 768px) {
+  .scroll-container {
+    columns: 2 320px;
+  }
+}
+
+/* Cambia a una sola columna en pantallas aún más pequeñas */
+@media (max-width: 580px) {
+  .scroll-container {
+    grid-template-columns: 1fr;
+  }
 }
 </style>
+
+<!--  El efectode pinterest layout también se llama Masory layout -->
